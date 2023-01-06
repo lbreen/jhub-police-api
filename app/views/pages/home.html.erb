@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.79)), url('<%= image_path "police_background_photo.jpeg" %>');">
+  <div class="banner-content">
+    <h1>Police Transparency</h1>
+    <p>Find information about your local police force easily</p>
+    <i class="fa-solid fa-angle-down" id="banner-cta"></i>
+  </div>
+</div>
+<div class="card-wrapper">
+  <div class="card-grid">
+    <% @category_array.each do |data, null| %>
+      <%= render 'card-category', image_path: data[:image_path], description: data[:description], button: data[:button] %>
+    <% end %>
+  </div>
+</div>
