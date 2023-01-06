@@ -8,7 +8,7 @@
 <div class="card-wrapper">
   <div class="card-grid">
     <% @category_array.each do |data, null| %>
-      <%= render 'card-category', image_path: data[:image_path], description: data[:description], button: data[:button] %>
+      <%= render 'card-category', url_path: data[:url_path], image_path: data[:image_path], description: data[:description], button: data[:button] %>
     <% end %>
   </div>
 </div>
