@@ -1,0 +1,17 @@
+<div class="navbar">
+  <div class="navbar-item">
+    <%= link_to root_path, class: 'navbar-brand' do %>
+      <%= image_tag 'police_icon' %>
+    <% end %>
+  </div>
+  <div class="navbar-item">
+    <ul class="navbar-list">
+      <li class="navbar-list-item">
+        <%= link_to "Search", neighbourhood_policing_path, class: 'nav-link' %>
+      </li>
+      <li class="navbar-list-item">
+        <%= link_to "Crime data", crime_data_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</div>

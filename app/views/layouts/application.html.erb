@@ -11,7 +11,9 @@
   </head>
 
   <body>
+    <%= render 'components/navbar' %>
+    <%= render 'components/flashes' %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <%= render 'components/footer' %>
   </body>
 </html>
