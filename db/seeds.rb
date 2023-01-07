@@ -3,6 +3,14 @@ require 'rest-client'
 Neighbourhood.destroy_all
 Force.destroy_all
 
+def sanitise_description(data)
+  return if data.nil? || data.empty?
+
+  data.gsub(/<\/li>/, ",") # Replace </li> tags with a comma.
+      .gsub(/<\/\w*>/, " ") # Replace closing HTML tags with a space.
+      .gsub(/<[^<>]+>/, "") # Remove all remaining HTML tags
+end
+
 total_start_time = Time.now # Record overall start time
 
 # Fetch a list of police forces from the api and parse the results into an array
@@ -27,8 +35,11 @@ Force.all.each do |force|
   puts "Fetching data for #{force.name}" # User confirmation the api call is progressing
 
   force_data = JSON.parse(RestClient.get("https://data.police.uk/api/forces/#{force.api_id}"))
+
+  description = sanitise_description(force_data["description"])
+
   force.update({
-    description: force_data["description"] || "",
+    description: description || "",
     telephone: force_data["telephone"] || "",
     url: force_data["url"]|| "",
   })

@@ -21,13 +21,4 @@ class PagesController < ApplicationController
       },
     ]
   end
-
-  def senior_leadership
-  end
-
-  def neighbourhood_policing
-  end
-
-  def crime_data
-  end
 end
