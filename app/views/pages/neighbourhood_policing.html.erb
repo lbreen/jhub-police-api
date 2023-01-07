@@ -1,17 +1,19 @@
 <div class="wrapper">
-  <div class="container">
+  <div class="container" data-controller="search">
     <div class="title text-center padded">
       <h1>Search police data</h1>
     </div>
     <div class="search-bar">
-      <form id="search-form" class="row">
+      <form id="search-form" class="row" data-action="submit->search#search">
         <div class="col-10">
-          <input id="search-input" type="text" class="form-control" placeholder="Search police data">
+          <input id="search-input" type="text" class="form-control" placeholder="Search police data" data-search-target="input">
         </div>
         <div class="col-2">
           <input type="submit" class="btn btn-primary" value="Search">
         </div>
       </form>
+    </div>
+    <div class="results" data-search-target="results">
     </div>
   </div>
 </div>
