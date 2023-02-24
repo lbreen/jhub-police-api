@@ -23,7 +23,9 @@
 }
 
 .list-item-details {
-  flex-grow: 1;
+  flex-grow: 1; // This ensures the item (child) fills its parent (.list-item)
+  display: grid;
+  grid-template-rows: 1fr 2fr;
   text-align: left;
   padding: 0 16px;
   h2 {

@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # get 'crime_data', to: 'pages#crime_data'
 
   resources :forces, only: [:index, :show]
-  resources :neighbourhoods, only: [:index, :show]
+  # resources :neighbourhoods, only: [:index, :show]
 end
