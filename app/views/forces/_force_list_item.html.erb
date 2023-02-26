@@ -2,10 +2,13 @@
   <div class="list-item-photo">
     <%= image_tag "police_badge_placeholder" %>
   </div>
-  <div class="list-item-details">
-    <h2><%= force.name %></h2>
-    <p><%= force.description %></p>
-  </div>
+  <%= link_to force_path(force) do %>
+    <div class="list-item-details">
+
+      <h2><%= force.name %></h2>
+      <p><%= force.description %></p>
+    </div>
+      <% end %>
   <div class="list-item-contact">
     <p><i class="fa-solid fa-phone"></i> <%= force.telephone %></p>
     <p><i class="fa-brands fa-internet-explorer"></i> <%= link_to "Website", force.url, target: "_blank" %></p>

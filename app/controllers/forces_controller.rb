@@ -9,6 +9,8 @@ class ForcesController < ApplicationController
   end
 
   def show
+    @force = Force.find(params[:id])
 
+    @neighbourhoods = @force.neighbourhoods
   end
 end
