@@ -10,8 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 0) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_07_144013) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "forces", force: :cascade do |t|
+    t.string "api_id"
+    t.string "name"
+    t.text "description", default: ""
+    t.string "telephone", default: ""
+    t.string "url", default: ""
+    t.string "twitter_url", default: ""
+    t.string "facebook_url", default: ""
+    t.string "youtube_url", default: ""
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "neighbourhoods", force: :cascade do |t|
+    t.string "api_id"
+    t.string "name"
+    t.string "url", default: ""
+    t.float "lat", default: 0.0
+    t.float "long", default: 0.0
+    t.text "description", default: ""
+    t.bigint "force_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["force_id"], name: "index_neighbourhoods_on_force_id"
+  end
+
+  add_foreign_key "neighbourhoods", "forces"
 end

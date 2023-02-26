@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="container text-center padded">
+    <h1><%= @force.name %></h1>
+  </div>
+  <%= link_to "All forces", forces_path %>
+  <% @neighbourhoods.each do |neighbourhood| %>
+    <p><%= neighbourhood.name %></p>
+    <br>
+
+  <% end %>
+</div>

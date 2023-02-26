@@ -1,0 +1,50 @@
+.list {
+
+}
+
+.list-item {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 16px;
+  &:hover {
+    transform: scale(1.01);
+    cursor: pointer;
+  }
+}
+
+.list-item-photo img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.list-item-details {
+  flex-grow: 1; // This ensures the item (child) fills its parent (.list-item)
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  text-align: left;
+  padding: 0 16px;
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+}
+
+.list-item-contact {
+  min-width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
