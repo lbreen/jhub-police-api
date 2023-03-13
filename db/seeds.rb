@@ -61,7 +61,7 @@ Force.all.each do |force|
   neighbourhood_list.each do |neighbourhood|
     n = Neighbourhood.new({
       api_id: neighbourhood["id"],
-      name: neighbourhood["name"],
+      name: neighbourhood["name"]
     })
 
     n.force = force # Assign the neighbourhood to a force
@@ -86,6 +86,7 @@ puts"-----------------------"
 puts "DB seeding complete. "
 puts "#{Force.count} Police Forces and #{Neighbourhood.count} Neighbourhoods have been seeded."
 puts "Seeding took #{(total_finish_time - total_start_time).round(2)} seconds"
+
 # Update list of neighbourhoods - 4763 neighbourhoods! need to implement a quicker method.
 # i = 0 # Init API limit counter
 # Neighbourhood.all.each do |neighbourhood|
